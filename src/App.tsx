@@ -41,8 +41,12 @@ function App() {
 
   return (
     <>
-      <button onClick={handleUndo}>Undo</button>
-      <button onClick={handleRedo}>Redo</button>
+      <button disabled={cords.length === 0} onClick={handleUndo}>
+        Undo
+      </button>
+      <button disabled={removedCords.length === 0} onClick={handleRedo}>
+        Redo
+      </button>
       <div className="body" onClick={Cords}>
         {cords?.map((circle, idx) => {
           return (
